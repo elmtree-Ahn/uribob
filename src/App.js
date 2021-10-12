@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap');
     font-family: 'Noto Serif KR', serif;
+    color: #333;
   }
 `;
 
