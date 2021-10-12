@@ -1,13 +1,14 @@
 import './App.css';
 import {styled, createGlobalStyle} from 'styled-components';
 import Test from './component/Test';
-import Header from './component/BASICCOMPONENT/Header';
+import Header from './component/MAIN/Header';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle/>
       <Header />
+      
       {/* <Test /> */}
     </div>
   );
