@@ -2,13 +2,17 @@ import './App.css';
 import {styled, createGlobalStyle} from 'styled-components';
 import Test from './component/Test';
 import Header from './component/MAIN/Header';
+import { Route } from 'react-router';
+import Intro from './component/MAIN/Intro';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle/>
       <Header />
-      
+      <Route exact path="/">
+        <Intro/>
+      </Route>
       {/* <Test /> */}
     </div>
   );
