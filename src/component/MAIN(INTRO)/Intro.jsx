@@ -19,14 +19,13 @@ const Intro = () => {
           </div>
           <button>알아보기</button>
         </div>
-        <div className="imgBox">
+        <div className="introSlider">
           <Swiper navigation={true} className="mySwiper" slidesPerView={1}  spaceBetween={50} loop={true} autoplay={true} pagination={false}>
             <SwiperSlide></SwiperSlide>
             <SwiperSlide></SwiperSlide>
             <SwiperSlide></SwiperSlide>
             <SwiperSlide></SwiperSlide>
             <SwiperSlide></SwiperSlide>
-
           </Swiper>
         </div>
       </div>

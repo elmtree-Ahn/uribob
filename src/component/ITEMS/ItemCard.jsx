@@ -6,16 +6,16 @@ const url = (e) => {
 return `https://search.naver.com/search.naver?sm=tab_hty.top&where=image&query=${e}`
 };
 
-const ItemCard = () => {
+const ItemCard = (props) => {
   return(
     <ItemCardStyle>
-      <div className="title">{title}</div>
+      <div className="title">{props.title}</div>
 
         <a href={url(title)} className="goUrl">이게 무엇이오?</a>
         <div className="btnBox">
-          <button className="btn1 btn">구이</button>
-          <button className="btn2 btn">전</button>
-          <button className="btn3 btn">복합식품</button>
+          <button className="btn1 btn">{props.btn1}</button>
+          <button className="btn2 btn">{props.btn2}</button>
+          <button className="btn3 btn">{props.btn3}</button>
         </div>
         
 
