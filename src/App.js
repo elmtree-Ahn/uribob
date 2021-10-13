@@ -15,9 +15,6 @@ function App() {
       {/* <Route exact path="/">
         <Intro/>
       </Route> */}
-
-   <iframe src="https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0">대체 내용</iframe>
-
       <ItemCard />
 
       {/* <Test /> */}
