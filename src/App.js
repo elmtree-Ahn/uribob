@@ -1,22 +1,24 @@
 import './App.css';
 import {styled, createGlobalStyle} from 'styled-components';
 import Test from './component/Test';
-import Header from './component/MAIN/Header';
+import Header from './component/MAIN(INTRO)/Header';
 import { Route } from 'react-router';
-import Intro from './component/MAIN/Intro';
+import Intro from './component/MAIN(INTRO)/Intro';
 import ItemCard from './component/ITEMS/ItemCard';
+import More from './component/MORE/More';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle/>
-      {/* <Header /> */}
+      <Header />
       {/* 인트로 페이지 */}
-      {/* <Route exact path="/">
+      <Route exact path="/">
         <Intro/>
-      </Route> */}
-      <ItemCard />
-
+      </Route>
+      <Route path="/more">
+        <More />
+      </Route>
       {/* <Test /> */}
     </div>
   );

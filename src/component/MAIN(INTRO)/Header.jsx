@@ -45,7 +45,9 @@ const Header = () => {
           <Logo>우리밥</Logo>
         </Link>
         <MenuWrap>
-          <Menu>둘러보기</Menu>
+          <Link to="/more">
+            <Menu>둘러보기</Menu>
+          </Link>
           <Menu>찾아보기</Menu>
           <Search />
         </MenuWrap>
