@@ -29,6 +29,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Serif KR', serif;
     color: #333;
   }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
 `;
 
 

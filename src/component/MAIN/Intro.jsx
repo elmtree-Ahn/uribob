@@ -40,9 +40,10 @@ const Intro = () => {
 
 const IntroStyle = styled.div`
 padding-top:70px;
+
 .intro {
   display: flex;
-  padding: 3vw 5vw;
+  padding: 1vw 5vw;
 }
 .textBox {
   width: 50vw;
@@ -88,6 +89,7 @@ button:hover {
 }
 
 .footer {
+  padding-top: 1vw;
   padding-bottom: 4vw;
   text-align: center;
 }

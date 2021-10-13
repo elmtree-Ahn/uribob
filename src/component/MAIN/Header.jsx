@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from '../ITEMS/Search';
 
@@ -36,13 +37,13 @@ const Menu = styled.div`
   letter-spacing: -.2px;
 `
 
-
-
 const Header = () => {
   return(
     <>
       <HeaderBox>
-        <Logo>우리밥</Logo>
+        <Link to="/">
+          <Logo>우리밥</Logo>
+        </Link>
         <MenuWrap>
           <Menu>둘러보기</Menu>
           <Menu>찾아보기</Menu>
