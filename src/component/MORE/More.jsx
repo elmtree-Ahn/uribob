@@ -28,7 +28,7 @@ const More = () => {
         console.log(error)
       }
 
-    }, 500)
+    }, 100)
 
     return () => {
       clearTimeout(moreTime)

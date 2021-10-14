@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import "./introstyles.css";
-
+import { Link } from 'react-router-dom';
 
 const Intro = () => {
   return(
@@ -17,7 +17,9 @@ const Intro = () => {
           <div className="description">
             새로운 음식을 먹어보고 싶다면 멀리서 찾지 마시오. <br/> 우리가 모르는 우리 음식들이 생각 이상으로 많소.
           </div>
-          <button>알아보기</button>
+          <Link to="/more">
+            <button>둘러보기</button>
+          </Link>
         </div>
         <div className="introSlider">
           <Swiper navigation={true} className="mySwiper" slidesPerView={1}  spaceBetween={50} loop={true} autoplay={true} pagination={false}>

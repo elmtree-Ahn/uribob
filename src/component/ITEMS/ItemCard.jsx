@@ -15,7 +15,7 @@ const ItemCard = (props) => {
       <div className="title">
         {props.title}
       </div>
-      <div className="goUrl" onClick={()=>{SetModalView(true)}}>이게 무엇이오?</div>
+      <div className="goUrl">이게 무엇이오?</div>
       <div className="btnBox">
         <button className="btn1 btn">{props.btn1}</button>
         <button className="btn2 btn">{props.btn2}</button>
