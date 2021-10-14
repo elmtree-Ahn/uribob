@@ -6,6 +6,7 @@ import { Route } from 'react-router';
 import Intro from './component/MAIN(INTRO)/Intro';
 import ItemCard from './component/ITEMS/ItemCard';
 import More from './component/MORE/More';
+import Modal from './component/ITEMS/Modal';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/more">
         <More />
       </Route>
+
       {/* <Test /> */}
     </div>
   );

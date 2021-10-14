@@ -1,26 +1,30 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Modal from './Modal';
 
 
 const ItemCard = (props) => {
 
+
   const url = (e) => {
-  return `https://search.naver.com/search.naver?sm=tab_hty.top&where=image&query=${e}`
+  return `https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=${e}`
 };
 
   return(
     <ItemCardStyle>
-      <div className="title">{props.title}</div>
+      <div className="title">
+        {props.title}
+      </div>
+      <div className="goUrl" onClick={()=>{SetModalView(true)}}>이게 무엇이오?</div>
+      <div className="btnBox">
+        <button className="btn1 btn">{props.btn1}</button>
+        <button className="btn2 btn">{props.btn2}</button>
+        <button className="btn3 btn">{props.btn3}</button>
+      </div>
+      <div className="cart">
+        내 밥상에 넣겠소.
+      </div>
 
-        <a href={url(props.title)} className="goUrl">이게 무엇이오?</a>
-        <div className="btnBox">
-          <button className="btn1 btn">{props.btn1}</button>
-          <button className="btn2 btn">{props.btn2}</button>
-          <button className="btn3 btn">{props.btn3}</button>
-        </div>
-        <div className="cart">내 밥상에 넣겠소.</div>  
-
-      
     </ItemCardStyle>
   )
 }
@@ -56,6 +60,7 @@ transition: .5s;
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 2px;
+  cursor: pointer;
   &:hover{
     color: #5C6E91;
   }
