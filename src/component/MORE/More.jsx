@@ -9,23 +9,34 @@ const More = () => {
   const [data, setData] = useState(null);
 
 
-  useEffect(async() => {
-    try {
-      const url = `https://api.odcloud.kr/api/15047799/v1/uddi:16ef90b7-b713-46f6-b467-9f0b49e31e23_201903060920?page=1&perPage=10&serviceKey=vBUxcrx13lr5T7u8Ao2Ynr%2F%2Fisw1kIbkT%2BYX%2B%2FzZpcJOihkBunzvGXDCu4%2B3%2BIpzL8eD%2FKbLYZt8ZZJ4zaMYow%3D%3D`;
+  useEffect( () => {
 
-      const res = await axios({
-        method: 'get',
-        url: url,
-      })
-      setData(res.data.data)
-      console.log(res.data.data[0]["대표식품명"])
-    }
+    const moreTime = setTimeout(async() => {
 
-    catch (error) {
-      console.log(error)
+      try {
+        const url = `https://api.odcloud.kr/api/15047799/v1/uddi:16ef90b7-b713-46f6-b467-9f0b49e31e23_201903060920?page=1&perPage=10&serviceKey=vBUxcrx13lr5T7u8Ao2Ynr%2F%2Fisw1kIbkT%2BYX%2B%2FzZpcJOihkBunzvGXDCu4%2B3%2BIpzL8eD%2FKbLYZt8ZZJ4zaMYow%3D%3D`;
+
+        const res = await axios({
+          method: 'get',
+          url: url,
+        })
+        setData(res.data.data)
+        console.log(res.data.data[0]["대표식품명"])
+      }
+
+      catch (error) {
+        console.log(error)
+      }
+
+    }, 500)
+
+    return () => {
+      clearTimeout(moreTime)
     }
 
   }, [])
+
+
   return(
     <MoreStyle>
 

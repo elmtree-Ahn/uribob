@@ -25,18 +25,15 @@ const MoreSlider = (props) => {
         oop={true} loopFillGroupWithBlank={true} pagination={{"clickable": true}} 
         navigation={{'clickable':true}} 
         className="mySwiper">
-          <SwiperSlide>
-            <ItemCard ></ItemCard>
-          </SwiperSlide> 
-          {/* {
-            props.data.map((a, i) => {
+          {
+            props.data && props.data.map((a, i) => {
               return (
               <SwiperSlide>
                 <ItemCard title={props.data[i]["대표식품명"]} btn1={props.data[i]["식품분류(중)"]} btn2={props.data[i]["식품분류(소)"]} btn3={props.data[i]["식품유형"]}/>
               </SwiperSlide> 
               )
             })
-          } */}
+          }
 
       </Swiper>
       </div>
