@@ -20,6 +20,7 @@ function App() {
       <Route path="/more">
         <More />
       </Route>
+      {/* <Modal/> */}
 
       {/* <Test /> */}
     </div>

@@ -3,24 +3,26 @@ import styled from 'styled-components'
 const Modal = (props) => {
 
   return (
-    <ModalStyle>
-      <div className="modalWrapper">
-        <iframe src={props.url} className="madalInner">
-          props.title
-        </iframe>
-      </div>
-    </ModalStyle>
+    <>
+      <ModalStyle>
+        <div className="modalWrapper">
+          <iframe src={props.url} className="modalInner">
+            props.title
+          </iframe>
+        </div>
+      </ModalStyle>
+    </>
   )
 }
 
 const ModalStyle = styled.div`
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 999;
+  z-index: 9999;
 
 .modalWrapper {
   display: flex;
@@ -31,12 +33,12 @@ const ModalStyle = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 999;
   overflow: auto;
   outline: none;
 }
 
-.madalInner{
+.modalInner{
   box-sizing: border-box;
   position: relative;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
