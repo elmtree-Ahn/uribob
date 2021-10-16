@@ -20,7 +20,7 @@ const MoreSlider = (props) => {
       {/* <h1>{props.data[0]["대표식품명"]}</h1> */}
       <div className="moreSlider">
         <Swiper 
-        slidesPerView={5} 
+        slidesPerView={4} 
         spaceBetween={20}         slidesPerGroup={2} l
         oop={true} loopFillGroupWithBlank={true} pagination={{"clickable": true}} 
         navigation={{'clickable':true}} 

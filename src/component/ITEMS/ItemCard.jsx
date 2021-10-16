@@ -12,14 +12,13 @@ const ItemCard = (props) => {
     return `https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=${e}`
   };
 
-  const [modalBtn, setModalBtn] = useState(false);
 
   return(
     <ItemCardStyle>    
       <div className="title">
         {props.title}
       </div>
-      <div className="goUrl" onClick={()=>{setModalBtn(true)}}>이게 무엇이오?</div>
+      <div className="goUrl">이게 무엇이오?</div>
 
       <div className="btnBox">
         <button className="btn1 btn">{props.btn1}</button>
@@ -29,11 +28,6 @@ const ItemCard = (props) => {
       <div className="cart">
         내 밥상에 넣겠소.
       </div>
-      {
-        modalBtn === true
-        ? <Modal />
-        : null
-      }
     </ItemCardStyle>
   )
 }

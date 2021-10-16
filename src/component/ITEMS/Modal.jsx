@@ -16,7 +16,7 @@ const Modal = (props) => {
 }
 
 const ModalStyle = styled.div`
-  position: fixed; 
+  position: relative; 
   top: 0;
   left: 0;
   bottom: 0;

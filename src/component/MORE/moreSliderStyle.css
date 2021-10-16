@@ -1,11 +1,14 @@
-.moreSlider .swiper {
-  width: 100%;
-  height: 100%;
+.moreSlider .swiper-container {
+  width: 90vw;
 }
+
+.moreSlider .swiper-wrap{}
 
 .moreSlider .swiper-slide {
   text-align: center;
   font-size: 18px;
+  width: 100%;
+  height: auto;
   /* background: #fff; */
 
   /* Center slide text vertically */
@@ -21,11 +24,4 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-}
-
-.moreSlider .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }

@@ -3,6 +3,7 @@ import TitleBox from '../ITEMS/TitleBox';
 import MoreSlider from './MoreSlider';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Modal from '../ITEMS/Modal';
 
 const More = () => {
 
@@ -37,11 +38,18 @@ const More = () => {
   }, [])
 
 
+  const [modalBtn, setModalBtn] = useState(false);
+
   return(
     <MoreStyle>
 
       <TitleBox title="이런 음식은 어떻소?"/>
       <MoreSlider data={data}/>
+      {
+        modalBtn === true
+        ? <Modal/>
+        : null
+      }
     </MoreStyle>
   )
 }
