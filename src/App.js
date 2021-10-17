@@ -6,8 +6,9 @@ import { Route } from 'react-router';
 import Intro from './component/MAIN(INTRO)/Intro';
 import ItemCard from './component/ITEMS/ItemCard';
 import More from './component/MORE/More';
-import Modal from './component/ITEMS/Modal';
-import { connect, useSelector } from 'react-redux';
+import Find from './component/FIND/Find';
+
+
 
 function App(props) {
 
@@ -24,17 +25,14 @@ function App(props) {
       <Route path="/more">
         <More/>
       </Route>
-      
+      <Route path="/find">
+        <Find/>
+      </Route>
     </div>
   );
 }
 
-function getStore(state) {
-  return {
-    name: state[0].name,
-    open: state[0].open
-  }
-}
+
 
 
 
@@ -55,4 +53,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default connect(getStore)(App)
+export default App;

@@ -1,8 +1,13 @@
 .moreSlider .swiper-container {
   width: 90vw;
+  height: 400px;
+  /* overflow: visible; */
 }
 
-.moreSlider .swiper-wrap{}
+.moreSlider .swiper-wrap {
+  width: 80%;
+  height: 100%;
+}
 
 .moreSlider .swiper-slide {
   text-align: center;

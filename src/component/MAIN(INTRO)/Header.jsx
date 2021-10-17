@@ -48,7 +48,9 @@ const Header = () => {
           <Link to="/more">
             <Menu>둘러보기</Menu>
           </Link>
-          <Menu>찾아보기</Menu>
+          <Link to="/find">
+            <Menu>찾아보기</Menu>
+          </Link>
           <Search />
         </MenuWrap>
         <MenuWrap>
