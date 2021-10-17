@@ -22,7 +22,7 @@ const More = () => {
           url: url,
         })
         setData(res.data.data)
-        console.log(res.data.data[0]["대표식품명"])
+
       }
 
       catch (error) {
@@ -37,19 +37,12 @@ const More = () => {
 
   }, [])
 
-
-  const [modalBtn, setModalBtn] = useState(false);
-
   return(
     <MoreStyle>
 
       <TitleBox title="이런 음식은 어떻소?"/>
       <MoreSlider data={data}/>
-      {
-        modalBtn === true
-        ? <Modal/>
-        : null
-      }
+
     </MoreStyle>
   )
 }

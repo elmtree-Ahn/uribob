@@ -4,6 +4,10 @@
   /* overflow: visible; */
 }
 
+.moreSlider .swiper-wrapper {
+  transform: none;
+}
+
 .moreSlider .swiper-wrap {
   width: 80%;
   height: 100%;

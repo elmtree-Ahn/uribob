@@ -3,23 +3,26 @@ import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Modal from './Modal';
+import { useEffect,} from 'react';
+import { useRef } from 'react';
 
 
 const ItemCard = (props) => {
 
+  const [modalOpen, setModalOpen] = useState("none");
 
   const url = (e) => {
     return `https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=${e}`
   };
 
+  
 
   return(
     <ItemCardStyle>    
       <div className="title">
         {props.title}
       </div>
-      <div className="goUrl">이게 무엇이오?</div>
-
+      <div className="goUrl" onClick={()=>{setModalOpen("block")}}>이게 무엇이오?</div>
       <div className="btnBox">
         <button className="btn1 btn">{props.btn1}</button>
         <button className="btn2 btn">{props.btn2}</button>
@@ -28,6 +31,10 @@ const ItemCard = (props) => {
       <div className="cart">
         내 밥상에 넣겠소.
       </div>
+
+    <Modal url={url(props.title)} display={modalOpen}/>
+
+
     </ItemCardStyle>
   )
 }
@@ -44,12 +51,13 @@ width: 20vw;
 min-width: 220px;
 height: 26vw;
 min-height: 287px;
+margin-bottom: 20px;
 background-color: white;
 box-shadow: 0px 2px 10px #999;
 transition: .5s;
 
 &:hover{
-  transform: translate(0, -5px);
+  /* transform: translate(0, -5px); */
   box-shadow: 0px 2px 10px #444;
 }
 

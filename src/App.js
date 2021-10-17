@@ -22,9 +22,11 @@ function App(props) {
       <Route exact path="/">
         <Intro/>
       </Route>
+      {/* 둘러보기 */}
       <Route path="/more">
         <More/>
       </Route>
+      {/* 찾아보기 */}
       <Route path="/find">
         <Find/>
       </Route>
@@ -33,12 +35,13 @@ function App(props) {
 }
 
 
-
-
-
 // 전역속성
 const GlobalStyle = createGlobalStyle`
   body {
+    position: fixed;
+    top: 0;
+    overflow-y: scroll;
+    width: 100%;
     box-sizing: border-box;
     background-color: #FFF3DE;
 

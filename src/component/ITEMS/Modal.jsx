@@ -1,11 +1,17 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components'
+import { useRef } from 'react';
 
 const Modal = (props) => {
 
+  const copyDisplay = props.display;
+  const [close, setClose] = useState(copyDisplay)
+
   return (
     <>
-      <ModalStyle>
-        <div className="modalWrapper">
+      <ModalStyle display={close}>
+        {/* <div className="modalWrapper" onClick={()=> {setClose("none")}}> */}
+        <div className="modalWrapper">  
           <iframe src={props.url} className="modalInner">
             props.title
           </iframe>
@@ -16,12 +22,13 @@ const Modal = (props) => {
 }
 
 const ModalStyle = styled.div`
+  display: ${props => props.display || "block"};
   position: fixed; 
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.79);
   z-index: 9999;
 
 .modalWrapper {
