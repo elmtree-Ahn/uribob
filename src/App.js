@@ -7,8 +7,12 @@ import Intro from './component/MAIN(INTRO)/Intro';
 import ItemCard from './component/ITEMS/ItemCard';
 import More from './component/MORE/More';
 import Modal from './component/ITEMS/Modal';
+import { connect, useSelector } from 'react-redux';
 
-function App() {
+function App(props) {
+
+
+
   return (
     <div className="App">
       <GlobalStyle/>
@@ -18,14 +22,20 @@ function App() {
         <Intro/>
       </Route>
       <Route path="/more">
-        <More />
+        <More/>
       </Route>
-      {/* <Modal/> */}
-
-      {/* <Test /> */}
+      
     </div>
   );
 }
+
+function getStore(state) {
+  return {
+    name: state[0].name,
+    open: state[0].open
+  }
+}
+
 
 
 // 전역속성
@@ -45,5 +55,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
-export default App;
+export default connect(getStore)(App)
