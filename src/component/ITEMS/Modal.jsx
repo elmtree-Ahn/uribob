@@ -4,24 +4,21 @@ import { useRef } from 'react';
 
 const Modal = (props) => {
 
-  const copyDisplay = props.display;
-  const [close, setClose] = useState(copyDisplay)
+
 
   return (
-    <>
-      <ModalStyle display={close}>
-        {/* <div className="modalWrapper" onClick={()=> {setClose("none")}}> */}
-        <div className="modalWrapper">  
-          <iframe src={props.url} className="modalInner">
-            props.title
-          </iframe>
-        </div>
-      </ModalStyle>
-    </>
+  <ModalStyle display={props.display} >
+    <div className="modalWrapper" >  
+      <iframe src={props.url} className="modalInner">
+        props.title
+      </iframe>
+    </div>
+  </ModalStyle>
   )
 }
 
 const ModalStyle = styled.div`
+
   display: ${props => props.display || "block"};
   position: fixed; 
   top: 0;
@@ -29,6 +26,7 @@ const ModalStyle = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.79);
+  cursor: pointer;
   z-index: 9999;
 
 .modalWrapper {
@@ -56,5 +54,7 @@ const ModalStyle = styled.div`
   top: 0
 }
 `
+
+
 
 export default Modal;

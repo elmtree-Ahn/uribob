@@ -38,10 +38,10 @@ function App(props) {
 // 전역속성
 const GlobalStyle = createGlobalStyle`
   body {
-    position: fixed;
-    top: 0;
-    overflow-y: scroll;
-    width: 100%;
+    /* position: fixed; */
+    /* top: 0; */
+    /* overflow-y: scroll; */
+    /* width: 100%; */
     box-sizing: border-box;
     background-color: #FFF3DE;
 

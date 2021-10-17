@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+
 import styled from 'styled-components';
 import Modal from './Modal';
 import { useEffect,} from 'react';
@@ -83,7 +82,7 @@ transition: .5s;
 .btn {
   margin: 0 5px;
   padding: 5px 15px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
   border: none;
   border-radius: 10px;
