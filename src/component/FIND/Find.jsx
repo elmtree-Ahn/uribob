@@ -30,12 +30,15 @@ const Find = () => {
     return() => {
       clearTimeout(moreTime)
     }
+
   }, [])
   
+  // 바뀐 음식 이름
   const [kindOfFood, setKindOfFood] = useState('');
 
 
-  
+
+
 
   return(
     <FindStyle>
@@ -63,9 +66,9 @@ const Find = () => {
         </div>
         <div className="itemWrap">
           {
-            data && data.map((a) => {
+            data && data.map((a, i) => {
               return (
-                <ItemCard title={a["대표식품명"]} btn1={a["식품분류(중)"]} btn2={a["식품분류(소)"]} btn3={a["식품유형"]}/>
+                <ItemCard title={a["대표식품명"]} btn1={a["식품분류(중)"]} btn2={a["식품분류(소)"]} btn3={a["식품유형"]} key={i}/>
               )
             })
           }
