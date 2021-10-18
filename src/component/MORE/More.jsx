@@ -42,7 +42,6 @@ const More = () => {
 
       <TitleBox title="이런 음식은 어떻소?"/>
       <MoreSlider data={data}/>
-
     </MoreStyle>
   )
 }

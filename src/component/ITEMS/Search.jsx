@@ -1,10 +1,18 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Search = () => {
+
+  const [findData, setFindData] = useState('');
+  
+
   return(
     <SearchStyle>
-      <input type="text" placeholder="무엇을 찾으시오?"/>
-      <i class="fas fa-search"></i>
+      <input onChange={(e) => {setFindData(e.target.value)}} type="text" placeholder="무엇을 찾으시오?"/>
+      <Link to="/find" findData={findData} >
+        <i class="fas fa-search"></i>
+      </Link>
     </SearchStyle>
   )
 }

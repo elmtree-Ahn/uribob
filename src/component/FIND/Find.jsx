@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import ItemCard from '../ITEMS/ItemCard';
 import TitleBox from '../ITEMS/TitleBox';
 
-const Find = () => {
+const Find = (props) => {
 
   const [foodData, setFoodData] = useState([]);
 
@@ -57,27 +57,27 @@ const Find = () => {
 
   return(
     <FindStyle>
-      <TitleBox title={kindOfFood.length > 0 ? kindOfFood + `, 이렇게나 많소` : `무슨 음식을 찾소?`
+      <TitleBox title={kindOfFood.length > 0 ? kindOfFood.slice(0, -1) + `, 이렇게나 많소` : `무슨 음식을 찾소?`
         }/>
       <div className="inner">
         <div className="categoryMenu">
           <ul>
-            <li onClick={() => {findFoodData(setKindOfFood('구이류'))}}>구이류</li>
-            <li onClick={() => {setKindOfFood('국류')}}>국류</li>
-            <li onClick={() => {setKindOfFood('회류')}}>회류</li>
-            <li onClick={() => {setKindOfFood('양념류')}}>양념류</li>
-            <li onClick={() => {setKindOfFood('밥류')}}>밥류</li>
-            <li onClick={() => {setKindOfFood('젓갈류')}}>젓갈류</li>
-            <li onClick={() => {setKindOfFood('찜류')}}>찜류</li>
-            <li onClick={() => {setKindOfFood('전골류')}}>전골류</li>
-            <li onClick={() => {setKindOfFood('김치류')}}>김치류</li>
-            <li onClick={() => {setKindOfFood('나물류')}}>나물류</li>
-            <li onClick={() => {setKindOfFood('장류')}}>장류</li>
-            <li onClick={() => {setKindOfFood('장아찌류')}}>장아찌류</li>
-            <li onClick={() => {setKindOfFood('떡류')}}>떡류</li>
-            <li onClick={() => {setKindOfFood('면류')}}>면류</li>
-            <li onClick={() => {setKindOfFood('한과류')}}>한과류</li>
-            <li onClick={() => {setKindOfFood('죽류')}}>죽류</li>
+            <li onClick={() => {findFoodData(setKindOfFood('구이류'))}}>구이</li>
+            <li onClick={() => {setKindOfFood('국류')}}>국</li>
+            <li onClick={() => {setKindOfFood('회류')}}>회</li>
+            <li onClick={() => {setKindOfFood('양념류')}}>양념</li>
+            <li onClick={() => {setKindOfFood('밥류')}}>밥</li>
+            <li onClick={() => {setKindOfFood('젓갈류')}}>젓갈</li>
+            <li onClick={() => {setKindOfFood('찜류')}}>찜</li>
+            <li onClick={() => {setKindOfFood('전골류')}}>전골</li>
+            <li onClick={() => {setKindOfFood('김치류')}}>김치</li>
+            <li onClick={() => {setKindOfFood('나물류')}}>나물</li>
+            <li onClick={() => {setKindOfFood('장류')}}>장</li>
+            <li onClick={() => {setKindOfFood('장아찌류')}}>장아찌</li>
+            <li onClick={() => {setKindOfFood('떡류')}}>떡</li>
+            <li onClick={() => {setKindOfFood('면류')}}>면</li>
+            <li onClick={() => {setKindOfFood('한과류')}}>한과</li>
+            <li onClick={() => {setKindOfFood('죽류')}}>죽</li>
           </ul>
         </div>
         <div className="itemWrap">
