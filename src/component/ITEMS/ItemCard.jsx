@@ -50,6 +50,7 @@ width: 20vw;
 min-width: 220px;
 height: 26vw;
 min-height: 287px;
+margin-right: 20px;
 margin-bottom: 20px;
 background-color: white;
 box-shadow: 0px 2px 10px #999;
