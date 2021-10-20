@@ -4,24 +4,37 @@ import styled from 'styled-components';
 import Modal from './Modal';
 import { useEffect,} from 'react';
 import { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { modalOnOff, changeFoodname } from '../../modules/modal';
 
 
 const ItemCard = (props) => {
 
-  const [modalOpen, setModalOpen] = useState("none");
 
   const url = (e) => {
     return `https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=${e}`
   };
 
-  
+  // 리덕스 스토어 상태 확인
+  const {onOff, foodName} = useSelector(state => ({
+    onOff: state.modal.onOff,
+    foodName: state.modal.foodName
+  }))
+
+  // dispatch
+  const dispatch = useDispatch();
+
+  const onModalOnOff = () => dispatch(modalOnOff());
+  const onChangeFoodname = foodName => dispatch(changeFoodname(foodName));
+
+
 
   return(
     <ItemCardStyle>    
       <div className="title">
         {props.title}
       </div>
-      <div className="goUrl" onClick={()=>{setModalOpen("block")}}>이게 무엇이오?</div>
+      <div className="goUrl" onClick={onModalOnOff}>이게 무엇이오?</div>
       <div className="btnBox">
         <button className="btn1 btn">{props.btn1}</button>
         <button className="btn2 btn">{props.btn2}</button>
@@ -30,8 +43,13 @@ const ItemCard = (props) => {
       <div className="cart">
         내 밥상에 넣겠소.
       </div>
-
-    <Modal url={url(props.title)} display={modalOpen}/>
+    {
+      // onOff === true
+      // ? <Modal url={url(props.title)} />
+      // : null
+      console.log(onOff)
+    }
+    
 
 
     </ItemCardStyle>

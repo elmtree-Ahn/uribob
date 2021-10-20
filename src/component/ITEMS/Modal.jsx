@@ -7,7 +7,7 @@ const Modal = (props) => {
 
 
   return (
-  <ModalStyle display={props.display} >
+  <ModalStyle >
     <div className="modalWrapper" >  
       <iframe src={props.url} className="modalInner">
         props.title

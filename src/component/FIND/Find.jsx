@@ -51,8 +51,7 @@ const Find = (props) => {
   }
 
   findFoodData(kindOfFood)
-  console.log(findFoodArr);
-  console.log(kindOfFood);
+
 
 
   return(
