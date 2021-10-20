@@ -5,8 +5,8 @@ const initialSate = {
 }
 
 // 액션 타입 만들기
-const MODAL_ONOFF = "madalOnOff/MODAL_ONOFF";
-const CHANGE_FOODNAME = "madalOnOff/CHANGE_FOODNAME";
+const MODAL_ONOFF = "modalOnOff/MODAL_ONOFF";
+const CHANGE_FOODNAME = "modalOnOff/CHANGE_FOODNAME";
 
 // 액션 생성함수 만들기
 export const modalOnOff = () => ({type: MODAL_ONOFF});

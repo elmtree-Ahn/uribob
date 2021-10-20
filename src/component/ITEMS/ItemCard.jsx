@@ -47,7 +47,8 @@ const ItemCard = (props) => {
       // onOff === true
       // ? <Modal url={url(props.title)} />
       // : null
-      console.log(onOff)
+      console.log(onOff),
+      console.log(foodName)
     }
     
 
