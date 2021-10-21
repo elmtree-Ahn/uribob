@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { modalOnOff } from '../../modules/modal';
 
 const Modal = (props) => {
 
+  const onOff = useSelector(state => state.modal.onOff);
 
+  const dispatch = useDispatch();
+  const onModalOnOff = () => dispatch(modalOnOff());
 
   return (
-  <ModalStyle >
+  <ModalStyle onClick={() => onModalOnOff()}>
     <div className="modalWrapper" >  
       <iframe src={props.url} className="modalInner">
         props.title

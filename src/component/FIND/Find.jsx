@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import ItemCard from '../ITEMS/ItemCard';
 import TitleBox from '../ITEMS/TitleBox';
+import { useSelector } from 'react-redux';
+import Modal from '../ITEMS/Modal';
 
 const Find = (props) => {
 
@@ -13,7 +15,7 @@ const Find = (props) => {
     
     const moreTime = setTimeout(async() => {
       try {
-        const url = `https://api.odcloud.kr/api/15047799/v1/uddi:16ef90b7-b713-46f6-b467-9f0b49e31e23_201903060920?page=1&perPage=200&serviceKey=vBUxcrx13lr5T7u8Ao2Ynr%2F%2Fisw1kIbkT%2BYX%2B%2FzZpcJOihkBunzvGXDCu4%2B3%2BIpzL8eD%2FKbLYZt8ZZJ4zaMYow%3D%3D`;
+        const url = `https://api.odcloud.kr/api/15047799/v1/uddi:16ef90b7-b713-46f6-b467-9f0b49e31e23_201903060920?page=1&perPage=100&serviceKey=vBUxcrx13lr5T7u8Ao2Ynr%2F%2Fisw1kIbkT%2BYX%2B%2FzZpcJOihkBunzvGXDCu4%2B3%2BIpzL8eD%2FKbLYZt8ZZJ4zaMYow%3D%3D`;
 
         const res = await axios({
           method: 'get',
@@ -37,8 +39,6 @@ const Find = (props) => {
   // 바뀐 음식 이름
   const [kindOfFood, setKindOfFood] = useState('');
   
-
-
   
   const findFoodArr = [];
   const findFoodData = (food) => {
@@ -47,12 +47,20 @@ const Find = (props) => {
         findFoodArr.push(foodData[i])
       }
     }
-
   }
 
   findFoodData(kindOfFood)
 
+  // 리덕스 스토어 상태 확인
+  const {onOff, foodName} = useSelector(state => ({
+    onOff: state.modal.onOff,
+    foodName: state.modal.foodName}));
 
+
+  // url 주소
+  const url = (e) => {
+    return `https://search.daum.net/search?w=img&nil_search=btn&DA=NTB&enc=utf8&q=${e}`
+  };
 
   return(
     <FindStyle>
@@ -82,12 +90,12 @@ const Find = (props) => {
         <div className="itemWrap">
           {
             findFoodArr.length > 0
-            ? (findFoodArr && findFoodArr.map((a, i) => {
+            ? (findFoodArr.map((a, i) => {
               return (
                 <ItemCard title={a["대표식품명"]} btn1={a["식품분류(중)"]} btn2={a["식품분류(소)"]} btn3={a["식품유형"]} key={i}/>
               )
             }))
-            : (foodData && foodData.map((a, i) => {
+            : (foodData.map((a, i) => {
               return (
                 <ItemCard title={a["대표식품명"]} btn1={a["식품분류(중)"]} btn2={a["식품분류(소)"]} btn3={a["식품유형"]} key={i}/>
               )
@@ -95,6 +103,11 @@ const Find = (props) => {
           }
         </div>
       </div>
+      {
+        onOff === true
+        ? <Modal url={url(foodName)} />
+        : null
+      }
     </FindStyle>
   )
 }
@@ -107,7 +120,7 @@ padding-top: 70px;
 .inner {
   display: flex;
   justify-content: space-around;  
-  width: 90vw;
+  width: 100vw;
   margin: 0 auto;
 }
 
@@ -129,7 +142,7 @@ padding-top: 70px;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-around; */
-  width: 75%;
+  width: 70%;
   /* background-color: orange; */
 }
 

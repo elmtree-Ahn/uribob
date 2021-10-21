@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import styled from 'styled-components';
 import Modal from './Modal';
 import { useEffect,} from 'react';
@@ -27,14 +26,14 @@ const ItemCard = (props) => {
   const onModalOnOff = () => dispatch(modalOnOff());
   const onChangeFoodname = foodName => dispatch(changeFoodname(foodName));
 
-
+  
 
   return(
     <ItemCardStyle>    
       <div className="title">
         {props.title}
       </div>
-      <div className="goUrl" onClick={onModalOnOff}>이게 무엇이오?</div>
+      <div className="goUrl" onClick={() => onModalOnOff(onChangeFoodname(props.title))}>이게 무엇이오?</div>
       <div className="btnBox">
         <button className="btn1 btn">{props.btn1}</button>
         <button className="btn2 btn">{props.btn2}</button>
@@ -43,13 +42,15 @@ const ItemCard = (props) => {
       <div className="cart">
         내 밥상에 넣겠소.
       </div>
-    {
-      // onOff === true
-      // ? <Modal url={url(props.title)} />
-      // : null
-      console.log(onOff),
-      console.log(foodName)
-    }
+    {/* {
+      onOff === true
+      ? <Modal url={url(props.title)} />
+      : null
+    } */}
+    {/* {
+      console.log(onOff)
+      // console.log(foodName)
+    } */}
     
 
 
