@@ -54,9 +54,14 @@ const Header = () => {
           <Search />
         </MenuWrap>
         <MenuWrap>
-          <Menu>들어가기</Menu>
+          <Link to='/myfood'>
+            <Menu>내 밥상</Menu>
+          </Link>
+          <Link to='/login'>
+            <Menu>들어가기</Menu>
+          </Link>
           <Menu>입회하기</Menu>
-          {/* <Menu>내 밥상</Menu> */}
+
         </MenuWrap>
       </HeaderBox>
 

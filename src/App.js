@@ -7,6 +7,8 @@ import Intro from './component/MAIN(INTRO)/Intro';
 import ItemCard from './component/ITEMS/ItemCard';
 import More from './component/MORE/More';
 import Find from './component/FIND/Find';
+import Login from './component/LOGIN/Login';
+import Myfood from './component/MYFOOD/Myfood';
 
 
 
@@ -19,17 +21,14 @@ function App(props) {
       <GlobalStyle/>
       <Header />
       {/* 인트로 페이지 */}
-      <Route exact path="/">
-        <Intro/>
-      </Route>
+      <Route exact path="/" component={Intro} />
       {/* 둘러보기 */}
-      <Route path="/more">
-        <More/>
-      </Route>
+      <Route path="/more" component={More} />
+      <Route path="/myfood" component={Myfood} />
       {/* 찾아보기 */}
-      <Route path="/find">
-        <Find/>
-      </Route>
+      <Route path="/find" component={Find} />
+      {/* 입회하기 */}
+      <Route path="/login" component={Login} />
     </div>
   );
 }
