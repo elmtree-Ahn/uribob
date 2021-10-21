@@ -7,14 +7,23 @@ import { modalOnOff } from '../../modules/modal';
 
 const Modal = (props) => {
 
-  const onOff = useSelector(state => state.modal.onOff);
+
+
+  // 리덕스 스토어 상태 확인
+  const {onOff, foodName} = useSelector(state => ({
+    onOff: state.modal.onOff,
+    foodName: state.modal.foodName}));
+  
 
   const dispatch = useDispatch();
   const onModalOnOff = () => dispatch(modalOnOff());
 
+
+
   return (
   <ModalStyle onClick={() => onModalOnOff()}>
     <div className="modalWrapper" >  
+      <h3>{foodName} 검색 결과</h3>
       <iframe src={props.url} className="modalInner">
         props.title
       </iframe>
@@ -37,6 +46,7 @@ const ModalStyle = styled.div`
 
 .modalWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -49,14 +59,21 @@ const ModalStyle = styled.div`
   outline: none;
 }
 
+h3 {
+  margin: 20px 0;
+  font-size: 2rem;
+
+  color: white;
+}
+
 .modalInner{
   box-sizing: border-box;
   position: relative;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   background-color: #fff;
   border-radius: 10px;
-  width: 40vw;
-  height: 50vw;
+  width: 35vw;
+  height: 45vw;
   top: 0
 }
 `
