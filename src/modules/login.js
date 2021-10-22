@@ -11,13 +11,14 @@ const SET_EMAIL = "login/SET_EMAIL";
 const SET_NICKNAME = "login/SET_NICKNAME";
 const SET_THUMNAIL_URL = "login/SET_THUMNAIL_URL";
 const SET_GENDER = "login/SET_GENDER";
-
+const SET_EMPTY = "login/SET_EMPTY";
 
 // 액션 생성함수 만들기
 export const setEmail = email => ({type: SET_EMAIL, email});
 export const setNickame = nickname => ({type: SET_NICKNAME, nickname});
 export const setThumnailUrl = thumnail_url => ({type: SET_THUMNAIL_URL, thumnail_url});
 export const setGender = gender => ({type: SET_GENDER, gender});
+export const setEmpty = () => ({type: SET_EMPTY})
 
 
 // 리듀서 선언 
@@ -42,6 +43,14 @@ export default function login(state = initialState, action) {
       return {
         ...state,
         gender: action.gender
+      }
+    case SET_EMPTY :
+      return {
+        ...state,
+        email: ``,
+        nickname: ``,
+        thumnail_url: ``,
+        gender: ``
       }
     default:
       return state;

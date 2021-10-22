@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from '../ITEMS/Search';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setEmpty } from '../../modules/login';
 
 const HeaderBox = styled.div`
   position: fixed;
@@ -32,6 +34,7 @@ align-items: center;
 `
 
 const Menu = styled.div`
+  cursor: pointer;
   margin-right: 2vw;
   font-size: 1rem;
   font-weight: 600;
@@ -45,8 +48,14 @@ const Header = () => {
       nickname: state.login.nickname,
       thumnail_url: state.login.thumnail_url,
       gender: state.login.gender,
-  
     }));
+
+    // 디스패치
+    const dispatch = useDispatch();
+
+    // 액션들을 디스패치 하는 함수 만들기 
+    const onSetEmpty = () => dispatch(setEmpty());
+
   return(
     <>
       <HeaderBox>
@@ -71,7 +80,7 @@ const Header = () => {
               <Link to='/mypage'>
                 <Menu>내 호패</Menu>
               </Link>
-              <Menu>나가기</Menu>
+              <Menu onClick={onSetEmpty}>나가기</Menu>
             </MenuWrap>
           )
           : (
