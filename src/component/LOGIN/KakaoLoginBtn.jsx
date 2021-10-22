@@ -1,9 +1,26 @@
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { setEmail, setGender, setNickame, setThumnailUrl } from "../../modules/login";
 
 const KakaoLoginBtn = () => {
 
   // 리덕스 스토어 조회
-  
+  const { email, nickname, thumnail_url, gender } = useSelector(state => ({
+    email: state.login.email,
+    nickname: state.login.nickname,
+    thumnail_url: state.login.thumnail_url,
+    gender: state.login.gender,
+
+  }))
+
+// 디스패치
+const dispatch = useDispatch();
+// 액션 디스패치 하는 함수
+const onSetEmail = email => dispatch(setEmail(email));
+const onSetNickname = nickname => dispatch(setNickame(nickname));
+const onSetThumnailUrl = thumnail_url => dispatch(setThumnailUrl(thumnail_url));
+const onSetGender = gender => dispatch(setGender(gender));
 
   // 카카오 앱키 입력
   // window.Kakao.init('49c9dd59cca9d60ad0f6b04cc69e1220');
@@ -20,18 +37,15 @@ const KakaoLoginBtn = () => {
             const kakao_account = res.kakao_account;
             console.log(kakao_account);
             // 카카오 로그인 정보 변수화
-            console.log(kakao_account.email);
-            console.log(kakao_account.gender);
-            console.log(kakao_account.profile.nickname);
-            console.log(kakao_account.profile.profile_image_url)
+            onSetEmail(kakao_account.email);
+            onSetNickname(kakao_account.gender);
+            onSetThumnailUrl(kakao_account.profile.nickname);
+            onSetGender(kakao_account.profile.profile_image_url);
           }
         });
       }
     })
-  }
-
-
-  // 로그인 정보 리덕스에 담기 
+  } 
 
   return (
     <KakaoLoginBtnStyled onClick={() => {kakaoLogin()}}>
