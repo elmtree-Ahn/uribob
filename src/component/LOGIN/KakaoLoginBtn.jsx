@@ -12,7 +12,7 @@ const KakaoLoginBtn = () => {
     thumnail_url: state.login.thumnail_url,
     gender: state.login.gender,
 
-  }))
+  }));
 
 // 디스패치
 const dispatch = useDispatch();
@@ -38,9 +38,9 @@ const onSetGender = gender => dispatch(setGender(gender));
             console.log(kakao_account);
             // 카카오 로그인 정보 변수화
             onSetEmail(kakao_account.email);
-            onSetNickname(kakao_account.gender);
-            onSetThumnailUrl(kakao_account.profile.nickname);
-            onSetGender(kakao_account.profile.profile_image_url);
+            onSetGender(kakao_account.gender);
+            onSetNickname(kakao_account.profile.nickname);
+            onSetThumnailUrl(kakao_account.profile.profile_image_url);
           }
         });
       }
@@ -57,6 +57,7 @@ const onSetGender = gender => dispatch(setGender(gender));
 export default KakaoLoginBtn;
 
 const KakaoLoginBtnStyled = styled.div`
+display: inline-block;
 cursor: pointer;
 
 img {
