@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from '../ITEMS/Search';
+import { useSelector } from 'react-redux';
 
 const HeaderBox = styled.div`
   position: fixed;
@@ -38,6 +39,14 @@ const Menu = styled.div`
 `
 
 const Header = () => {
+    // login store 조회
+    const { email, nickname, thumnail_url, gender } = useSelector(state => ({
+      email: state.login.email,
+      nickname: state.login.nickname,
+      thumnail_url: state.login.thumnail_url,
+      gender: state.login.gender,
+  
+    }));
   return(
     <>
       <HeaderBox>
@@ -53,18 +62,32 @@ const Header = () => {
           </Link>
           <Search />
         </MenuWrap>
-        <MenuWrap>
-          <Link to='/myfood'>
-            <Menu>내 밥상</Menu>
-          </Link>
-          <Link to='/login'>
-            <Menu>들어가기</Menu>
-          </Link>
-          <Menu>입회하기</Menu>
+        { email.length > 0 
+          ? (
+            <MenuWrap>
+              <Link to='/myfood'>
+                <Menu>내 밥상</Menu>
+              </Link>
+              <Link to='/mypage'>
+                <Menu>내 호패</Menu>
+              </Link>
+              <Menu>나가기</Menu>
+            </MenuWrap>
+          )
+          : (
+            <MenuWrap>
+              <Link to='/myfood'>
+                <Menu>내 밥상</Menu>
+              </Link>
+              <Link to='/login'>
+                <Menu>들어가기</Menu>
+              </Link>
+              <Menu>입회하기</Menu>
+            </MenuWrap>
+          )
 
-        </MenuWrap>
+        }
       </HeaderBox>
-
     </>
   )
 }
