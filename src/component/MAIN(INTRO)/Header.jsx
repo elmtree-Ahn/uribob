@@ -4,6 +4,7 @@ import Search from '../ITEMS/Search';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setEmpty } from '../../modules/login';
+import { useState } from 'react';
 
 const HeaderBox = styled.div`
   position: fixed;
@@ -39,6 +40,10 @@ const Menu = styled.div`
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: -.2px;
+  color: ${props => props.color};
+  &:hover {
+    color: #d76518;
+  }
 `
 
 const Header = () => {
@@ -56,6 +61,8 @@ const Header = () => {
     // 액션들을 디스패치 하는 함수 만들기 
     const onSetEmpty = () => dispatch(setEmpty());
 
+    
+
   return(
     <>
       <HeaderBox>
@@ -64,7 +71,7 @@ const Header = () => {
         </Link>
         <MenuWrap>
           <Link to="/more">
-            <Menu>둘러보기</Menu>
+            <Menu  >둘러보기</Menu>
           </Link>
           <Link to="/find">
             <Menu>찾아보기</Menu>
