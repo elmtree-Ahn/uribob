@@ -78,9 +78,11 @@ const Header = () => {
                 <Menu>내 밥상</Menu>
               </Link>
               <Link to='/mypage'>
-                <Menu>내 호패</Menu>
+                <Menu>호패보기</Menu>
               </Link>
-              <Menu onClick={onSetEmpty}>나가기</Menu>
+              <Link to="/">
+                <Menu onClick={onSetEmpty}>나가기</Menu>
+              </Link>
             </MenuWrap>
           )
           : (

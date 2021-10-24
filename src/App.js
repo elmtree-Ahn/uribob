@@ -9,6 +9,7 @@ import More from './component/MORE/More';
 import Find from './component/FIND/Find';
 import Login from './component/LOGIN/Login';
 import Myfood from './component/MYFOOD/Myfood';
+import Mypage from './component/MYPAGE/Mypage';
 
 
 
@@ -30,6 +31,9 @@ function App(props) {
       <Route path="/find" component={Find} />
       {/* 입회하기 */}
       <Route path="/login" component={Login} />
+      {/* 호패보기 */}
+      <Route path="/mypage" component={Mypage} />
+      
     </div>
   );
 }
