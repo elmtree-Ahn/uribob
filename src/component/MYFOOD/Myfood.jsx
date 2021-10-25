@@ -17,7 +17,9 @@ const Myfood = () => {
     <MyfoodStyle>
       { 
         email.length > 1
-        ? <div>여기가 내 밥상이다!!</div>
+        ? (<><TitleBox title="여기가 내 밥상이다!!">
+        </TitleBox>
+        <div>아직 준비 중이오!</div></>)
         : (
           <Link to="/login">
             <TitleBox title="들어와야 볼 수 있오!"></TitleBox>
@@ -35,7 +37,7 @@ export default Myfood;
 
 const MyfoodStyle = styled.div`
 padding-top: 80px;
-font-size: 2rem;
+font-size: 1.2rem;
 font-weight: 700;
 text-align: center;
 
